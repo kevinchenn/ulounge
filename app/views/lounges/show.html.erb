@@ -1,4 +1,4 @@
-<!--These are your Lounges/Subpages-->
+<!--For a single Lounge/Subpage-->
 <p id="notice"><%= notice %></p>
 
 <h2><%= @lounge.name %></h2>
@@ -8,15 +8,15 @@
   <%= @lounge.description %>
 </p>
 
-
+<p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>
+<br>
 <table>
-	<%= render(cart.line_items) %>
-	
-	<tr class="total_line">
-		<td colspan="2">Total</td>
-		<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-	</tr>
+	<%= render(@lounge.posts) %>
 </table>
 
-<%= link_to 'Edit', edit_lounge_path(@lounge) %> |
-<%= link_to 'Back', lounges_path %>
+
+
+
+
+<!--<%= button_to 'Submit a Post', new_post_path(lounge_id: @lounge), :method => :get %> ... button_to doesn't work for some reason -->
+

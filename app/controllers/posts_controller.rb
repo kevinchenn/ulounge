@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @lounge = Lounge.find(params[:lounge_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,8 +41,10 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
-
+    #@user = current_user ...to be implemented in application_controller
+    @lounge = Lounge.find(params[:post][:lounge_id])
+    @post =  @lounge.posts.build(params[:post]) #Post.new(params[:post])
+        
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
