@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @lounge.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @lounge.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_lounge_path(@lounge) %> |
+<%= link_to 'Back', lounges_path %>
