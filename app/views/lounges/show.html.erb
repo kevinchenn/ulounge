@@ -1,15 +1,22 @@
+<!--These are your Lounges/Subpages-->
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @lounge.name %>
-</p>
+<h2><%= @lounge.name %></h2>
 
 <p>
   <b>Description:</b>
   <%= @lounge.description %>
 </p>
 
+
+<table>
+	<%= render(cart.line_items) %>
+	
+	<tr class="total_line">
+		<td colspan="2">Total</td>
+		<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+	</tr>
+</table>
 
 <%= link_to 'Edit', edit_lounge_path(@lounge) %> |
 <%= link_to 'Back', lounges_path %>

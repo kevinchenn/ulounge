@@ -1,4 +1,6 @@
 Ulounge::Application.routes.draw do
+  match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }
+  
   resources :users
 
   resources :lounges
