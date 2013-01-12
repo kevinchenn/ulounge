@@ -9,6 +9,10 @@
   <b>Description:</b>
   <%= @post.description %>
 </p>
+<p>
+  <%= pluralize(@post.likes, 'like') %>
+</p>
+
 
 <!--
 <p>
