@@ -8,7 +8,7 @@ Ulounge::Application.routes.draw do
   resources :comments
 
   resources :posts do
-    get 'like', :on => :member
+    get 'like' => 'posts#like'
   end
 
   # The priority is based upon order of creation:

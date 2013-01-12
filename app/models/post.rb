@@ -9,8 +9,4 @@ class Post < ActiveRecord::Base
   def init
     self.likes ||= 0
   end
-  
-  def add_like
-    self.likes += 1
-  end
 end

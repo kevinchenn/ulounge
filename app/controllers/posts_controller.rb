@@ -85,10 +85,8 @@ class PostsController < ApplicationController
   end
   
   def like
-    @post = Post.find(params[:id])
-    @post.add_like
-    respond_to do |format|
-      format.html {redirect_to posts_url}
-    end
+    @post = Post.find(params[:new_post_id])
+    @post.likes += 1
+    @post.save
   end
 end
