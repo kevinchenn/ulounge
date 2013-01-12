@@ -10,6 +10,8 @@ Ulounge::Application.routes.draw do
   resources :posts do
     get 'like' => 'posts#like'
   end
+  
+  #match 'posts#like', :as => like
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
