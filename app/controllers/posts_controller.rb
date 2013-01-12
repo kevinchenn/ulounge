@@ -85,8 +85,12 @@ class PostsController < ApplicationController
   end
   
   def like
+    @lounge = Lounge.find(params[:lounge_id])
     @post = Post.find(params[:new_post_id])
     @post.likes += 1
     @post.save
+    respond_to do |format|
+      format.js
+    end
   end
 end

@@ -8,7 +8,9 @@ Ulounge::Application.routes.draw do
   resources :comments
 
   resources :posts do
-    get 'like' => 'posts#like'
+    member do
+      get 'like' => 'posts#like'
+    end
   end
   
   #match 'posts#like', :as => like

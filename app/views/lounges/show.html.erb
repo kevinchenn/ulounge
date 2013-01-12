@@ -10,8 +10,10 @@
 
 <p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>
 <br>
-<table>
-	<%= render(@lounge.posts) %>
+<table>	
+	<div id="post_container">
+		<%= render(@lounge.posts) %>
+	</div>
 </table>
 
 
