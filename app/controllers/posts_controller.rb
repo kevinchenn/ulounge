@@ -89,8 +89,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:new_post_id])
     @post.likes += 1
     @post.save
-    respond_to do |format|
-      format.js
-    end
+    redirect_to(bucketlist_url)
+    
+    #respond_to do |format|
+    #  format.js
+    #end
   end
 end

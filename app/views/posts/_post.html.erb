@@ -1,7 +1,7 @@
 <tr>
 	<td>
 		<%= link_to image_tag("thumbs-up.jpg", alt: "like", width:25 ), 
-			like_post_path(new_post_id: post.id, lounge_id: post.lounge_id), remote: true %>
+			like_post_path(new_post_id: post.id, lounge_id: post.lounge_id) %>
 	</td>
 	<!--<div class="post_container">-->
 		<td><%= pluralize(post.likes, 'like') %></td>
