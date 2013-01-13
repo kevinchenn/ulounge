@@ -1,4 +1,10 @@
 Ulounge::Application.routes.draw do
+  devise_for :admins
+
+  resources :admins
+
+  devise_for :users
+
   match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }
   
   resources :users
