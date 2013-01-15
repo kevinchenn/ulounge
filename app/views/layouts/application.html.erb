@@ -11,12 +11,14 @@
 		<%= link_to 'Home', bucketlist_path %>		
 	</ul>
 	<ul class="hmenu">
-		User:
+		<!--User:-->
 	  <%= render 'devise/menu/login_items' %>
 		<%= render 'devise/menu/registration_items' %>
+		<!--
 		Admin: 
 	  <%= render 'devise/menu/admin_login_items' %>
 		<%= render 'devise/menu/admin_registration_items' %>
+		-->
 	</ul>
 	<%= yield %>
 

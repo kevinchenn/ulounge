@@ -21,7 +21,7 @@
 
 
 <p>
-  <%= pluralize(@post.likes, 'like') %>
+  <%= pluralize(@post.likes.count, 'like') %>
 </p>
 
 
