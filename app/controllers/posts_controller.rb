@@ -1,4 +1,10 @@
 class PostsController < ApplicationController
+  
+  before_filter :authenticate_user!, :only => [:new]
+  before_filter :authenticate_admin!, :only => [:index]
+  before_filter :authenticate_creator_or_admin, :only => [:edit, :destroy]
+  
+  #current user :only=> edit  ... helper
   # GET /posts
   # GET /posts.json
   def index
@@ -14,6 +20,9 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
+    @username = @user.username
+    @user_id = @post.user_id 
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,14 +45,18 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @lounge = Lounge.find(@post.lounge_id)
+    @user_id = @post.user_id
+    @user = User.find(@post.user_id)
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    #@user = current_user ...to be implemented in application_controller
+    @user = current_user
     @lounge = Lounge.find(params[:post][:lounge_id])
     @post =  @lounge.posts.build(params[:post]) #Post.new(params[:post])
+    @post.user_id = @user.id
         
     respond_to do |format|
       if @post.save
@@ -60,6 +73,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    @lounge = Lounge.find(@post.lounge_id)
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -95,4 +109,16 @@ class PostsController < ApplicationController
     #  format.js
     #end
   end
+  
+  #Determines who can edit
+  protected
+    def authenticate_creator_or_admin
+      if current_admin
+        #none
+      elsif current_user.nil?
+        redirect_to new_user_session_path, notice: "Please log in" 
+      elsif !(current_user.id ==  Post.find(params[:id]).user_id)
+        redirect_to new_user_session_path, notice: "Please log in"
+      end
+    end
 end

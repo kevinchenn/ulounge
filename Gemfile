@@ -5,8 +5,10 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'sqlite3', :groups => [:development, :test]
+gem 'pg', :groups => [:production]
 
+gem "sass", :require => 'sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,7 +25,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -38,3 +40,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "paperclip", "~> 3.0"
+
+gem 'devise'

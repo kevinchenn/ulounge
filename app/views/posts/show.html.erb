@@ -5,16 +5,23 @@
   <%= @post.subject %>
 </p>
 
-<p>
-<%= image_tag @post.photo.url(:medium) %>
-</p>
-
+	<p>
+	  <b>Created by:</b>
+	  <%= @username %>
+	</p>
+	
 <p>
   <b>Description:</b>
   <%= @post.description %>
 </p>
+
 <p>
-  <%= pluralize(@post.likes, 'like') %>
+<%= image_tag @post.photo.url(:medium) %>
+</p>
+
+
+<p>
+  <%= pluralize(@post.likes.count, 'like') %>
 </p>
 
 
@@ -42,6 +49,10 @@
   <b>Comments:</b>
 </p>
 
+<!--Edit link only shows up for the user that created the post-->
+<% if current_admin || (!current_user.nil? && (current_user.id ==  @post.user_id)) %>
+	<%= link_to 'Edit', edit_post_path(@post) %>
+	<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back to Lounge', lounge_path(@post.lounge_id) %>
