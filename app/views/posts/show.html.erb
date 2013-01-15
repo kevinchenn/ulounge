@@ -29,6 +29,18 @@
   <%= @post.user_id %>
 </p>
 -->
+<p>
+  <b>Leave a Comment:</b>
+<form method="post" action="">
+<textarea name="comments" cols="25" rows="5">
+</textarea><br>
+<input type="submit" value="Submit" />
+</form>
+</p>
+ 
+<p>
+  <b>Comments:</b>
+</p>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
