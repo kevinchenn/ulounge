@@ -12,6 +12,8 @@ Ulounge::Application.routes.draw do
   resources :lounges
 
   resources :comments
+  
+  resources :likes
 
   resources :posts do
     member do

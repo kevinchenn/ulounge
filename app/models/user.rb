@@ -10,4 +10,10 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   validates :email, :password, :password_confirmation, :name, :username, presence: true
+  
+  has_many :likes
+  
+  def has_like? product
+    likes.find_by_product_id product.id
+  end
 end

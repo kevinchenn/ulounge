@@ -14,3 +14,15 @@ https://github.com/plataformatec/devise/wiki
 
 http://stackoverflow.com/questions/3966344/setup-devise-to-only-allow-editing-of-own-records
 Sign in/Sign Up links: https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
+
+
+Links:
+link_to(body, url, html_options = {})
+  # url is a String; you can use URL helpers like
+  # posts_path
+
+link_to(body, url_options = {}, html_options = {})
+  # url_options, except :confirm or :method,
+  # is passed to url_for
+
+url_options includes params!!!!!! html_options includes :method!
