@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     @user = User.find(@post.user_id)
     @username = @user.username
     @user_id = @post.user_id 
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb

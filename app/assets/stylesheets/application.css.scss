@@ -1,15 +1,15 @@
 table {
+	tr {
+	}
 	td {
 		padding:5px;
 	}
 }
 
-ul.hmenu {
-  list-style: none;	
-  margin: 0 0 1em;
-	text-align:right;
-	li {
-		display: inline;
-		padding:5px;
-	}
+.arrow {
+	width:25px;
+}
+
+.post-image {
+	width:70px;
 }

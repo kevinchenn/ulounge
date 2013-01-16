@@ -1,0 +1,18 @@
+<h1>Lounges</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lounges.each do |lounge| %>
+  <tr>
+    <td><%= lounge.name %></td>
+    <td><%= lounge.description %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,24 +1,25 @@
-<!--For a single Lounge/Subpage-->
-<p id="notice"><%= notice %></p>
-
-<h2><%= @lounge.name %></h2>
-
-<p>
-  <b>Description:</b>
-  <%= @lounge.description %>
-</p>
-
-<p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>
-<br>
-<table>	
-	<div id="post_container">
-		<%= render(@lounge.posts) %>
+<div class="row-fluid row">	
+	<div class="span8 span-fixed-sidebar">
+		<div class="hero-unit">
+			<h2><%= @lounge.name %></h2>
+			<br>
+			<table>	
+				<div id="post_container">
+					<%= render(@lounge.posts) %>
+				</div>
+			</table>
+		</div>
 	</div>
-</table>
 
+	<div class="span4">
+		<div class="well sidebar-nav-fixed">
+			<p>
+			  <b>Description:</b>
+			  <%= @lounge.description %>
+			</p>
 
-
-
-
-<!--<%= button_to 'Submit a Post', new_post_path(lounge_id: @lounge), :method => :get %> ... button_to doesn't work for some reason -->
+			<p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>
+		</div>
+	</div>
+</div>
 

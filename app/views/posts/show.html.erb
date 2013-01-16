@@ -1,53 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid row">	
+	<div class="span8 span-fixed-sidebar">
+		<div class="hero-unit">
+			<h3><%= @post.subject %></h3> by <%= @username %>
+			<br>
+			<%= image_tag @post.photo.url(:medium) %>
+			<br><br>
+		  <b>Comments:</b>
+			<table>	
+					<%= render(@post.comments) %>
+			</table>
+		</div>
+	</div>
 
-<p>
-  <b>Subject:</b>
-  <%= @post.subject %>
-</p>
+	<div class="span4">
+		<div class="well sidebar-nav-fixed">
+			<p>
+			  <%= pluralize(@post.likes.count, 'like') %>
+			</p>
+			<p>
+			  <b>Description:</b>
+			  <%= @post.description %>
+			</p>
+			<p>
+				<% if current_user %>
+			  	<b>Leave a Comment:</b>
+					<%= render 'comments/form' %>	
+				<% else %>
+					Please <%= link_to 'sign in', new_user_session_path %> to make a comment
+				<% end %>
+			</p>
+			
+			<!--<p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>-->
+		</div>
+	</div>
+</div>
 
-	<p>
-	  <b>Created by:</b>
-	  <%= @username %>
-	</p>
-	
-<p>
-  <b>Description:</b>
-  <%= @post.description %>
-</p>
-
-<p>
-<%= image_tag @post.photo.url(:medium) %>
-</p>
-
-
-<p>
-  <%= pluralize(@post.likes.count, 'like') %>
-</p>
-
-
-<!--
-<p>
-  <b>Lounge:</b>
-  <%= @post.lounge_id %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @post.user_id %>
-</p>
--->
-<p>
-  <b>Leave a Comment:</b>
-<form method="post" action="">
-<textarea name="comments" cols="25" rows="5">
-</textarea><br>
-<input type="submit" value="Submit" />
-</form>
-</p>
- 
-<p>
-  <b>Comments:</b>
-</p>
 
 <!--Edit link only shows up for the user that created the post-->
 <% if current_admin || (!current_user.nil? && (current_user.id ==  @post.user_id)) %>

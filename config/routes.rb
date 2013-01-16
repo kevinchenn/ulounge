@@ -4,8 +4,6 @@ Ulounge::Application.routes.draw do
   resources :admins
 
   devise_for :users
-
-  match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }
   
   resources :users
 
@@ -15,11 +13,13 @@ Ulounge::Application.routes.draw do
   
   resources :likes
 
-  resources :posts do
-    member do
-      get 'like' => 'posts#like'
-    end
-  end
+  resources :posts
+  
+  match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }, :as => 'bucketlist'
+  match 'random' => 'lounges#show', :defaults => { :id => 2 }, :as => 'random'
+  
+  match 'about' => 'pages#about', :as => 'about'
+  match 'lounge_list' => 'pages#lounge_list', :as => 'lounge_list'
   
   #match 'posts#like', :as => like
 
