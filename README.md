@@ -37,3 +37,6 @@ http://nestacms.com/docs/creating-content/markdown-cheat-sheet
 http://stackoverflow.com/questions/4402556/rails-confused-about-syntax-for-passing-locals-to-partials
 http://stackoverflow.com/questions/6822917/how-can-i-render-a-child-partial-inside-its-parents-partial
 http://www.cowboycoded.com/2010/05/14/using-the-collection-parameter-in-a-ruby-on-rails-partial/  ***
+
+#DNS
+http://stackoverflow.com/questions/7170664/how-to-configure-heroku-application-dns-to-godaddy-domain
