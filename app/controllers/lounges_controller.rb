@@ -14,6 +14,7 @@ class LoungesController < ApplicationController
   # GET /lounges/1.json
   def show
     @lounge = Lounge.find(params[:id])
+    @posts = @lounge.posts
 
     respond_to do |format|
       format.html # show.html.erb
@@ -82,11 +83,42 @@ class LoungesController < ApplicationController
   end
 
   def like
+    @lounge = Lounge.find(params[:id])
     @like = Like.create(:post_id => params[:post_id], :user_id => params[:user_id])
     @post = @like.post
+    @posts = @lounge.posts
     respond_to do |format|
       format.js {@current_post = @post}
       format.json {render json: @post, status: :created, location: @post}
+    end
+  end
+  
+  def unlike
+    like = Like.find(params[:like_id]).destroy
+    @lounge = Lounge.find(params[:id])
+    @post = like.post    
+    respond_to do |format|
+      format.js {}
+    end
+  end
+  
+  def like_onpage
+    @lounge = Lounge.find(params[:id])
+    @like = Like.create(:post_id => params[:post_id], :user_id => params[:user_id])
+    @post = @like.post
+    @posts = @lounge.posts
+    respond_to do |format|
+      format.js {@current_post = @post}
+      format.json {render json: @post, status: :created, location: @post}
+    end
+  end
+  
+  def unlike_onpage
+    like = Like.find(params[:like_id]).destroy
+    @lounge = Lounge.find(params[:id])
+    @post = like.post    
+    respond_to do |format|
+      format.js {}
     end
   end
 end

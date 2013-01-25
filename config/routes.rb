@@ -10,6 +10,9 @@ Ulounge::Application.routes.draw do
   resources :lounges do
     collection do
       get 'like'
+      get 'unlike'
+      get 'like_onpage'
+      get 'unlike_onpage'
     end
   end
 

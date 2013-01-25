@@ -9,13 +9,9 @@ class Post < ActiveRecord::Base
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
-  
-  after_initialize :init
-  
-  #default_scope :order => "likes DESC"
-  
-  
-  def init
-    self.likes ||= 0
+    
+  def num_likes
+    - self.likes.count
   end
+
 end

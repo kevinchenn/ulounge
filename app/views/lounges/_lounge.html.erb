@@ -1,0 +1,6 @@
+<table>	
+	<% @posts = lounge.posts.sort_by(&:num_likes)%>
+	<% @posts.each do |post| %>
+		<%= render post %>
+	<% end %>
+</table>

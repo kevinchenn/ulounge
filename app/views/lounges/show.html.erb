@@ -3,11 +3,9 @@
 		<div class="hero-unit">
 			<h2><%= @lounge.name %></h2>
 			<br>
-			<table>	
-				<div id="post_container">
-					<%= render :partial => "posts/post", :collection => @lounge.posts, :locals => { :current_post => @current_post } %>
+				<div id="post-container">
+					<%= render @lounge %>
 				</div>
-			</table>
 		</div>
 	</div>
 
@@ -17,7 +15,6 @@
 			  <b>Description:</b>
 			  <%= @lounge.description %>
 			</p>
-
 			<p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>
 		</div>
 	</div>
