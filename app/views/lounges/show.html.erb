@@ -5,7 +5,7 @@
 			<br>
 			<table>	
 				<div id="post_container">
-					<%= render(@lounge.posts) %>
+					<%= render :partial => "posts/post", :collection => @lounge.posts, :locals => { :current_post => @current_post } %>
 				</div>
 			</table>
 		</div>

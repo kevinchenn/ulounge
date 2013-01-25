@@ -99,17 +99,7 @@ class PostsController < ApplicationController
     end
   end
   
-  def like
-    @lounge = Lounge.find(params[:lounge_id])
-    @post = Post.find(params[:new_post_id])
-    @post.likes += 1
-    @post.save
-    redirect_to(bucketlist_url)
-    
-    #respond_to do |format|
-    #  format.js
-    #end
-  end
+
   
   #Determines who can edit
   protected

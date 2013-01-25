@@ -7,13 +7,22 @@ Ulounge::Application.routes.draw do
   
   resources :users
 
-  resources :lounges
+  resources :lounges do
+    collection do
+      get 'like'
+    end
+  end
 
   resources :comments
   
   resources :likes
-
-  resources :posts
+  
+  resources :posts #do
+    #collection do
+     # get 'like'
+    #end
+  #end
+  
   
   match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }, :as => 'bucketlist'
   match 'random' => 'lounges#show', :defaults => { :id => 2 }, :as => 'random'

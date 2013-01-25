@@ -1,7 +1,7 @@
 <div class="row-fluid row">	
 	<div class="span8 span-fixed-sidebar">
 		<div class="hero-unit">
-			<h3><%= @post.subject %></h3> by <%= @username %>
+			<h3 style="display:inline-block; padding-right:10px"><%= @post.subject %></h3>by <%= @username %>
 			<br>
 			<%= image_tag @post.photo.url(:medium) %>
 			<br><br>
@@ -15,7 +15,24 @@
 	<div class="span4">
 		<div class="well sidebar-nav-fixed">
 			<p>
-			  <%= pluralize(@post.likes.count, 'like') %>
+				<table>
+					<tr>
+						<td><div class="like-count"><%= @post.likes.count %></div></td>
+						<td>
+							<% if current_user.nil? %>
+								<div class="like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png", onclick: "red heart.png", alt: "like"), 
+									new_user_session_path %></div>
+							<% else %>
+								<% @like = current_user.likes.find_by_post_id(@post.id) %>
+								<% if @like.nil?%>
+									<div class="like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png", onclick: "red heart.png", alt: "like"), {:controller => 'likes', :action => 'create', :post_id => @post.id, :user_id => current_user.id}, {:method => :post } %></div>
+								<% else %>
+									<div class="like-image"><%= link_to image_tag("red heart.png", mouseover: "grey heart.png", alt: "unlike"), @like, {:method => :delete} %></div>
+								<% end %>
+							<% end %>
+						</td>
+					</tr>
+				</table>
 			</p>
 			<p>
 			  <b>Description:</b>

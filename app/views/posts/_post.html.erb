@@ -1,20 +1,12 @@
 <tr>
-	<td>
-		<% if current_user.nil? %>
-			<div class="arrow"><%= link_to image_tag("blue arrow.png", alt: "like"), 
-				new_user_session_path %></div>
-		<% else %>
-			<% @like = current_user.likes.find_by_post_id(post.id) %>
-			<% if @like.nil?%>
-				<div class="arrow"><%= link_to image_tag("blue arrow.png", alt: "like"), 
-					{:controller => 'likes', :action => 'create', :post_id => post.id, :user_id => current_user.id}, {:method => :post } %></div>
-			<% else %>
-				<div class="arrow"><%= link_to image_tag("red arrow.png", alt: "unlike"), 
-					@like, :method => :delete %></div>
-			<% end %>
-		<% end %>
-	</td>
-	<td><%= pluralize(post.likes.count, 'like') %></td> <!--not sure about .count -->
+	<% if current_post == post %>
+	<div id = "active-likes">
+	<% else %>
+	<div>
+	<% end %>
+		<%= render :partial => 'likes/like_count_and_heart', :locals => { :post => post } %>
+	</div>
+
 	<td><div class="post-image"><%= image_tag post.photo.url(:thumb) %></div></td>
 	<td><%= link_to post.subject, post_path(post.id) %></td>
 </tr>

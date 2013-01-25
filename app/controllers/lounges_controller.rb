@@ -80,4 +80,13 @@ class LoungesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def like
+    @like = Like.create(:post_id => params[:post_id], :user_id => params[:user_id])
+    @post = @like.post
+    respond_to do |format|
+      format.js {@current_post = @post}
+      format.json {render json: @post, status: :created, location: @post}
+    end
+  end
 end
