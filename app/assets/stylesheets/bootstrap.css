@@ -6036,9 +6036,9 @@ a.badge:hover {
 }
 
 .hero-unit {
-  padding-left: 60px;
+  padding-left: 50px;
   margin-bottom: 30px;
-	margin-right: 100px;
+	margin-right: 50px;
   /*font-size: 18px; */
   /*font-weight: 200;*/
   /*line-height: 30px;*/
@@ -6051,7 +6051,7 @@ a.badge:hover {
 
 .hero-unit h1 {
   margin-bottom: 0;
-  font-size: 45px;
+  font-size: 40px;
   line-height: 1;
   letter-spacing: -1px;
   color: inherit;
