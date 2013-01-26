@@ -10,10 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+	
+	<div class="controls">
   <div class="field">
-    <%= f.text_area :content, rows: 6 %>
+    <%= f.text_area :content, :cols => 20, :rows => 3 %>
   </div>
+	</div>
 
   <div class="field">
     <%= f.hidden_field :post_id, :value => @post.id %>

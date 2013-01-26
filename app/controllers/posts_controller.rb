@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
-    @username = @user.username
+    #@username = @user.username
     @user_id = @post.user_id 
     @comment = Comment.new
 
@@ -98,8 +98,6 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-
   
   #Determines who can edit
   protected
