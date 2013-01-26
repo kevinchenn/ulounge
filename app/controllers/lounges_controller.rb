@@ -108,6 +108,7 @@ class LoungesController < ApplicationController
     @post = @like.post
     @posts = @lounge.posts
     respond_to do |format|
+      format.html { redirect_to @post }
       format.js {@current_post = @post}
       format.json {render json: @post, status: :created, location: @post}
     end
@@ -118,6 +119,7 @@ class LoungesController < ApplicationController
     @lounge = Lounge.find(params[:id])
     @post = like.post    
     respond_to do |format|
+      format.html { redirect_to @post }
       format.js {}
     end
   end

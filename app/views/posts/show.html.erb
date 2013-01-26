@@ -3,7 +3,7 @@
 		<div class="hero-unit">
 			<table style="margin-top:-10px;">
 				<tr>
-					<div id="like-view" style="display:inline-block; padding-right:10px"><%= render :partial => 'posts/like_count_and_heart',  :locals => {:post => @post} %></div>
+					<div id="like-view"><%= render :partial => 'posts/like_count_and_heart',  :locals => {:post => @post} %></div>
 					<td style="padding-left:10px">
 						<span class="subject-heading"><%= @post.subject %></span>
 						<div>by <%= @post.author %>, <i>submitted <%= time_ago_in_words(@post.created_at) %> ago</i></div>
