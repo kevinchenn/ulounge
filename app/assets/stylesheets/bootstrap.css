@@ -8,6 +8,20 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.comment-author {
+	font-size:85%;
+	font-weight:bold;
+	color:#4682B4;
+}
+
+.line-separator {
+	height:1px;
+	background:#EBEBEB;
+	border-bottom:0.8px solid #F0F0F0;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
 .sidebar-nav-fixed {
     padding: 9px;
     position:fixed;
@@ -20,7 +34,7 @@
     position:fixed;
     right:20px;
     top:80px;
-    width:400px;
+    width:380px;
 }
 
 .row-fluid > .span-fixed-sidebar {
@@ -1295,19 +1309,20 @@ textarea::-webkit-input-placeholder {
 }
 
 .input-medium {
-  width: 150px;
+  width: 50%;
 }
 
 .input-large {
-  width: 210px;
+  width: 70%;
 }
 
 .input-xlarge {
-  width: 270px;
+	width:80%;
+  /*width: 400px;*/
 }
 
 .input-xxlarge {
-  width: 530px;
+  width: 95%;
 }
 
 input[class*="span"],

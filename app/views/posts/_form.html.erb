@@ -1,4 +1,5 @@
-<%= form_for(@post) do |f| %>
+<br>
+<%= form_for @post, :url => posts_path, :html => { :multipart => true }  do |form| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,21 +12,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
+
+    <%= form.label :subject %><br />
+  <div class="controls">
+    <%= form.text_field :subject, :class => "input-large" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+
+    <%= form.label :description %><br />
+  <div class="controls">
+    <%= form.text_area :description, rows: 6, :class => "input-large" %>
   </div>
 	<div class="field">
-		<%= f.label :photo %>
-		<%= f.file_field :photo %>
+		<%= form.label :photo %>
+		<%= form.file_field :photo %>
 	</div>
-	<%= f.hidden_field :lounge_id, :value => @lounge.id %>  <!--track lounge-->
+	<%= form.hidden_field :lounge_id, :value => @lounge.id %>  <!--track lounge-->
 
+	<br>
   <div class="actions">
-    <%= f.submit "Submit Post"%>
+    <%= form.submit "Submit Post"%>
   </div>
 <% end %>

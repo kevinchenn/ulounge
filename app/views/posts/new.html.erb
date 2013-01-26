@@ -1,6 +1,24 @@
-<h1>New post</h1>
+<div class="row-fluid">	
+	<div class="span9">
+			<h1>New post</h1>
 
-<%= render 'form' %>
+			<%= render :partial => 'form' %>
 
-<br>
-<%= link_to 'Back to Lounge', lounge_path(@lounge) %>
+			<br>
+			<%= link_to 'Back to Lounge', lounge_path(@lounge) %>
+			
+	</div>
+
+	<div class="span3">
+		<div class="well sidebar-nav-fixed">
+			<p>
+			  <b>Description:</b>
+			  <%= @lounge.description %>
+			</p>
+			<br>
+			<%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %>
+		</div>
+	</div>
+</div>
+
+

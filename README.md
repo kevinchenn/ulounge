@@ -40,3 +40,6 @@ http://www.cowboycoded.com/2010/05/14/using-the-collection-parameter-in-a-ruby-o
 
 #DNS
 http://stackoverflow.com/questions/7170664/how-to-configure-heroku-application-dns-to-godaddy-domain
+
+#Changing form field width
+http://www.binarywebpark.com/customizing-form-input-field-size-in-rails-using-twitter-bootstrap/
