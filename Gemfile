@@ -42,3 +42,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem "paperclip", "~> 3.0"
 
 gem 'devise'
+
+gem 'thin'

@@ -13,13 +13,15 @@
 	font-weight:bold;
 	color:#4682B4;
 }
-
 .line-separator {
 	height:1px;
 	background:#EBEBEB;
 	border-bottom:0.8px solid #F0F0F0;
-	margin-top:5px;
+	margin-top:0px;
 	margin-bottom:5px;
+}
+.avatar {
+	width:50px;
 }
 
 .sidebar-nav-fixed {

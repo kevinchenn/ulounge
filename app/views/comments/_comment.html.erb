@@ -1,5 +1,10 @@
 <tr class = "comment">
-	<div class="line-separator"></div>
-	<div class="comment-author"><%= User.find(comment.user_id).username %></div>
-	<div class="comment-content"><%= comment.content %></div>
+	<td>
+		<div class="avatar"><%= image_tag 'default-avatar.jpg'%></div>
+	</td>
+	<td>
+		<div class="line-separator"></div>
+		<div class="comment-author"><%= User.find(comment.user_id).username %></div>
+		<div class="comment-content"><%= comment.content %></div>
+	</td>
 </tr>
