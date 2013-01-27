@@ -8,25 +8,6 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-.like-view {
-	display:inline-block; 
-	padding-right:10px;
-}
-.comment-author {
-	font-size:85%;
-	font-weight:bold;
-	color:#4682B4;
-}
-.line-separator {
-	height:1px;
-	background:#EBEBEB;
-	border-bottom:0.8px solid #F0F0F0;
-	margin-top:0px;
-	margin-bottom:5px;
-}
-.avatar {
-	width:50px;
-}
 
 .sidebar-nav-fixed {
     padding: 9px;

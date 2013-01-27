@@ -1,5 +1,47 @@
-table {
-	td {
-		padding:5px;
-	}
+/* Posts Show Page */
+#title-wrapper {
+	width:600px;
+}
+
+#like-count-large {
+	font-weight:bold;
+	font-size:240%;
+	color:#957070;
+	vertical-align:middle;
+	margin-top:5px;
+	width:28px;
+	float:left;
+}
+
+#like-image-large {
+	width:35px;
+	padding-right:15px;
+	float:left;
+}
+
+#right-wrapper {
+	width:522px;
+	float:left;
+}
+
+/* */
+
+.like-view {
+	display:inline-block; 
+	padding-right:10px;
+}
+.comment-author {
+	font-size:85%;
+	font-weight:bold;
+	color:#4682B4;
+}
+.line-separator {
+	height:1px;
+	background:#EBEBEB;
+	border-bottom:0.8px solid #F0F0F0;
+	margin-top:0px;
+	margin-bottom:5px;
+}
+.avatar {
+	width:50px;
 }

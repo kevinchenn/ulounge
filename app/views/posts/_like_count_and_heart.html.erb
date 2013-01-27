@@ -1,21 +1,17 @@
-	<td>
-	<div class="like-count" style="display:inline-block;"><%= post.likes.count %></div>
-	</td>
-	<td>
-	<div class="heart">
-		<% if current_user.nil? %>
-			<div class="like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), 
-				new_user_session_path %></div>
+	
+	<div id="like-count-large" style="display:inline-block;"><%= post.likes.count %></div>
+		
+	<% if current_user.nil? %>
+		<div id="like-image-large"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), 
+			new_user_session_path %></div>
+	<% else %>
+		<% @like = current_user.likes.find_by_post_id(post.id) %>
+		<% if @like.nil?%>
+			<div id="like-image-large"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), {:controller => 'lounges', :action => 'like_onpage', :post_id => post.id, :user_id => current_user.id, :id => post.lounge_id}, {:remote => true} %></div>
 		<% else %>
-			<% @like = current_user.likes.find_by_post_id(post.id) %>
-			<% if @like.nil?%>
-				<div class="like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), {:controller => 'lounges', :action => 'like_onpage', :post_id => post.id, :user_id => current_user.id, :id => post.lounge_id}, {:remote => false } %></div>
-			<% else %>
-				<div class="like-image"><%= link_to image_tag("red heart.png", mouseover: "grey heart.png"), {:controller => 'lounges', :action => 'unlike_onpage', :post_id => post.id, :like_id => @like.id, :id => post.lounge_id }, {:remote => false} %></div>
-			<% end %>
+			<div id="like-image-large"><%= link_to image_tag("red heart.png", mouseover: "grey heart.png"), {:controller => 'lounges', :action => 'unlike_onpage', :post_id => post.id, :like_id => @like.id, :id => post.lounge_id }, {:remote => true} %></div>
 		<% end %>
-	</div>
-	</td>
+	<% end %>
 
 
 
