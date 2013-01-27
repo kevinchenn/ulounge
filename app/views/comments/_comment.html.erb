@@ -1,6 +1,7 @@
 <tr class = "comment">
 	<td>
-		<div class="avatar"><%= image_tag 'default-avatar.jpg'%></div>
+		<!--<div class="avatar"><%= image_tag 'default-avatar.jpg'%></div>-->
+		<div class="avatar"><%= image_tag(comment.user.avatar.url(:thumb)) %></div>
 	</td>
 	<td>
 		<div class="line-separator"></div>
@@ -24,10 +25,11 @@
 			<% end %>
 			
 			<!--Delete link only shows up for the user that created comment-->
-			<% if current_admin || (!current_user.nil? && (current_user.id ==  comment.user_id)) %>
-				&nbsp;&nbsp;
-				<%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-			<% end %>
+			<span class="comment-delete">
+				<% if current_admin || (!current_user.nil? && (current_user.id ==  comment.user_id)) %>
+					<%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
+			</span>
 		</div>
 		<!--same line-->
 	</td>
