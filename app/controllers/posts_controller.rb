@@ -99,6 +99,24 @@ class PostsController < ApplicationController
     end
   end
   
+  def like
+    @like = CommentLike.create(:comment_id => params[:comment_id], :user_id => params[:user_id])
+    @comment = @like.comment
+    @post = @comment.post
+    respond_to do |format|
+      format.js {}
+    end
+  end
+  
+  def unlike
+    like = CommentLike.find(params[:comment_like_id]).destroy
+    @comment = like.comment
+    @post = @comment.post
+    respond_to do |format|
+      format.js {}
+    end
+  end
+  
   #Determines who can edit
   protected
     def authenticate_creator_or_admin

@@ -2,7 +2,6 @@
 #title-wrapper {
 	width:600px;
 }
-
 #like-count-large {
 	font-weight:bold;
 	font-size:240%;
@@ -12,36 +11,52 @@
 	width:28px;
 	float:left;
 }
-
 #like-image-large {
 	width:35px;
-	padding-right:15px;
+	padding-right:12px;
 	float:left;
 }
-
 #right-wrapper {
-	width:522px;
+	width:525px;
 	float:left;
 }
-
-/* */
-
 .like-view {
 	display:inline-block; 
 	padding-right:10px;
+}
+
+/* Comment */
+.avatar {
+	width:50px;
+}
+.line-separator {
+	height:1px;
+	background:#EBEBEB;
+	border-bottom:0.8px solid #F0F0F0;
+	margin-top:-4px;
+	margin-bottom:1px;
 }
 .comment-author {
 	font-size:85%;
 	font-weight:bold;
 	color:#4682B4;
 }
-.line-separator {
-	height:1px;
-	background:#EBEBEB;
-	border-bottom:0.8px solid #F0F0F0;
-	margin-top:0px;
-	margin-bottom:5px;
+.comment-content {
+	font-size:95%;
+	margin-top:-2px;
+	margin-bottom:-3px;
 }
-.avatar {
-	width:50px;
+.comment-like-image {
+	width:15px;
+	float:left;
+}
+.comment-like-count {
+	font-size:105%;
+	font-weight:bold;
+	color:#957070;
+	width:12px;
+	float:left;
+}
+.comment-wrapper {
+	width:27px;
 }

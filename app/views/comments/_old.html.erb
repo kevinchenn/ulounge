@@ -1,0 +1,16 @@
+<div class="comment-like-count" style="display:inline-block;"><%= comment.comment_likes.count %></div>
+	
+<% if current_user.nil? %>
+	<div class="comment-like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), 
+		new_user_session_path %></div>
+<% else %>
+	<% @like = current_user.comment_likes.find_by_comment_id(comment.id) %>
+	<% if @like.nil?%>
+		<div class="comment-like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), {:controller => 'lounges', :action => 'like_onpage', :post_id => post.id, :user_id => current_user.id, :id => post.lounge_id}, {:remote => true} %></div>
+	<% else %>
+		<div class="comment-like-image"><%= link_to image_tag("red heart.png", mouseover: "grey heart.png"), {:controller => 'lounges', :action => 'unlike_onpage', :post_id => post.id, :like_id => @like.id, :id => post.lounge_id }, {:remote => true} %></div>
+	<% end %>
+<% end %>
+
+
+

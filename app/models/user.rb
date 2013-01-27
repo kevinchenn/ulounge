@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username
   has_many :posts
   has_many :comments
-  validates :email, :password, :password_confirmation, :name, :username, presence: true
-  
   has_many :likes
+  has_many :comment_likes
+  validates :email, :password, :password_confirmation, :name, :username, presence: true
   
   def has_like? product
     likes.find_by_product_id product.id

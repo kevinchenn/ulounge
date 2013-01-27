@@ -4,7 +4,32 @@
 	</td>
 	<td>
 		<div class="line-separator"></div>
-		<div class="comment-author"><%= User.find(comment.user_id).username %></div>
+		<span class="comment-author"><%= User.find(comment.user_id).username %></span>
 		<div class="comment-content"><%= comment.content %></div>
+
+		<!--same line-->
+		<div id = "comment-wrapper">
+			<div class="comment-like-count" style="display:inline-block;"><%= comment.comment_likes.count %></div>
+
+			<% if current_user.nil? %>
+				<div class="comment-like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), 
+					new_user_session_path %></div>
+			<% else %>
+				<% @like = current_user.comment_likes.find_by_comment_id(comment.id) %>
+				<% if @like.nil?%>
+					<div class="comment-like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), {:controller => 'posts', :action => 'like', :comment_id => comment.id, :user_id => current_user.id}, {:remote => true} %></div>
+				<% else %>
+					<div class="comment-like-image"><%= link_to image_tag("red heart.png", mouseover: "grey heart.png"), {:controller => 'posts', :action => 'unlike', :comment_id => comment.id, :comment_like_id => @like.id}, {:remote => true} %></div>
+				<% end %>
+			<% end %>
+			
+			<!--Delete link only shows up for the user that created comment-->
+			<% if current_admin || (!current_user.nil? && (current_user.id ==  @comment.user_id)) %>
+				&nbsp;&nbsp;
+				<%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<br><br>
+			<% end %>
+		</div>
+		<!--same line-->
 	</td>
 </tr>

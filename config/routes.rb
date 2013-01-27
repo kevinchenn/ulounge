@@ -20,11 +20,12 @@ Ulounge::Application.routes.draw do
   
   resources :likes
   
-  resources :posts #do
-    #collection do
-     # get 'like'
-    #end
-  #end
+  resources :posts do
+    collection do
+      get 'like'
+      get 'unlike'
+    end
+  end
   
   
   match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }, :as => 'bucketlist'
