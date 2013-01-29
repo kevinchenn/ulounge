@@ -1,0 +1,45 @@
+<br>
+<%= form_for @post, :html => { :multipart => true }  do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= form.label :subject, 'Artist' %>
+	<%= form.text_field :subject, :class => "input-large" %><br><br>
+	
+	<%= form.label :day, 'Day Performing' %>
+	<%= form.text_field :day, :class => "input-large" %><br><br>
+	
+	<%= form.label :genre %>
+	<%= form.text_field :genre, :class => "input-large" %><br><br>
+
+	<%= form.label :description %>
+	<%= form.text_area :description, rows: 6, :class => "input-large" %><br><br>
+	
+	<%= form.label :opinion, "Reviewer's Opinion" %>
+	<%= form.text_area :opinion, rows: 6, :class => "input-large" %><br><br>
+	
+	<%= form.label :photo %>
+	<%= form.file_field :photo %><br><br>
+
+	<!--Tracks-->
+	<%= form.fields_for :tracks do |t| %>
+		<%= render "track_fields", :t => t %>
+	<% end %>
+
+	
+	<%= form.hidden_field :lounge_id, :value => @lounge.id %>  <!--track lounge-->
+	
+	<br><br>
+  <div class="actions">
+    <%= form.submit "Submit Post"%>
+  </div>
+<% end %>

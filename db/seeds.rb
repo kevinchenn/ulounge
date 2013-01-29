@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Lounge.create!(:id => 1, :name => "Bucketlist", :description => "Things you have to do around Berkeley before you graduate.")
-Lounge.create!(:id => 2, :name => "Random", :description => "Share whatever you want")
-User.create!(:id => 1, :name => "Michelle Chow", :username => "callmemc", :email => "callmemc@gmail.com", :password => "21326241", :password_confirmation => "21326241")
+Lounge.create!(:id => 2, :name => "Coachella", :description => "Post about and rate artists at the upcoming 2013 Coachella Music Festival.")
+#User.create!(:id => 1, :name => "Michelle Chow", :username => "callmemc", :email => "callmemc@gmail.com", :password => "21326241", :password_confirmation => "21326241")

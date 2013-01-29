@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
-    #@username = @user.username
+    @lounge = @post.lounge
     @user_id = @post.user_id 
     @comment = Comment.new
 
@@ -35,7 +35,12 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-    @lounge = Lounge.find(params[:lounge_id])
+    @lounge = Lounge.find(params[:lounge_id])    
+    #@tracks = Array.new(10) { @post.tracks.build }
+    
+    10.times do
+      track = @post.tracks.build
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -56,9 +61,20 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     @lounge = Lounge.find(params[:post][:lounge_id])
-    @post =  @lounge.posts.build(params[:post]) #Post.new(params[:post])
+    @post = Post.new(params[:post])
+    #@post =  @lounge.posts.build(params[:post]) #Post.new(params[:post])
     @post.user_id = @user.id
-        
+    
+    #new song link
+    #@tracks = Track.create(params[:tracks])
+    
+    #Parameter viewing
+    #@tracks = @post.tracks.build(params[:tracks_attributes])
+    
+    #params.each do |key,value|
+    #  Rails.logger.warn "Param #{key}: #{value}"
+    #end
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

@@ -29,7 +29,7 @@ Ulounge::Application.routes.draw do
   
   
   match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }, :as => 'bucketlist'
-  match 'random' => 'lounges#show', :defaults => { :id => 2 }, :as => 'random'
+  match 'coachella' => 'lounges#show', :defaults => { :id => 2 }, :as => 'coachella'
   
   match 'about' => 'pages#about', :as => 'about'
   match 'lounge_list' => 'pages#lounge_list', :as => 'lounge_list'

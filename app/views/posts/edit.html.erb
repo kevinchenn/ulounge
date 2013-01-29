@@ -2,7 +2,11 @@
 
 <h1>Editing post</h1>
 
-<%= render 'form' %>
+<% if @lounge.name == 'Coachella' %>
+	<%= render :partial => 'coachella_form' %>
+<% else %>
+	<%= render :partial => 'form' %>
+<% end %>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back to Lounge', lounge_path(@post.lounge_id) %>

@@ -8,16 +8,5 @@
 				</div>
 		</div>
 	</div>
-
-	<div class="span3">
-		<div class="well sidebar-nav-fixed">
-			<!--<div id="bucket"><%= image_tag 'bucket.png' %></div>-->
-			<p>
-			  <b>Description:</b>
-			  <%= @lounge.description %>
-			</p>
-			<p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>
-		</div>
-	</div>
+	<%= render :partial => 'lounges/description_sidebar' %>
 </div>
-

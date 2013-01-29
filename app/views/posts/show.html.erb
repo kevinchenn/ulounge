@@ -8,9 +8,19 @@
 					<br> by <%= @post.author %>, <i>submitted <%= time_ago_in_words(@post.created_at) %> ago</i>
 				</div>
 			</div>
+			
+			
+				<b>Day Performing: </b><%= @post.day %>
+				<br><b>Genre: </b><%= @post.genre %>
+				<div class = "tracks">
+					<% if @lounge.name == 'Coachella' %>
+						<%= render @post.tracks%>
+					<% end %>
+				</div>
+				<b>Reviewer's Opinion: </b><%= @post.opinion %>
+			
 		
 			<!--Comments-->
-			<br>
 		  <br><b>Comments:</b>
 			<p>
 				<% if current_user %>

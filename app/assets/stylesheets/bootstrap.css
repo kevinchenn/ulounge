@@ -1292,7 +1292,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .input-small {
-  width: 90px;
+  width: 30%;
 }
 
 .input-medium {

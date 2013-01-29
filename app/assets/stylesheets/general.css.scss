@@ -1,6 +1,7 @@
-/* Posts Show Page */
+/* Posts Show */
 #title-wrapper {
 	width:600px;
+	margin-top:10px;
 }
 #like-count-large {
 	font-weight:bold;
@@ -23,6 +24,11 @@
 .like-view {
 	display:inline-block; 
 	padding-right:10px;
+}
+
+/* Coachella Post - Show */
+.tracks {
+	padding-top:50px;
 }
 
 /* Comment */

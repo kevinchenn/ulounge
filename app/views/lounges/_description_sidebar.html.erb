@@ -1,0 +1,9 @@
+<div class="span3">
+	<div class="well sidebar-nav-fixed">
+		<p>
+		  <b>Description:</b>
+		  <%= @lounge.description %>
+		</p>
+		<p><%= link_to 'Submit a Post', new_post_path(lounge_id: @lounge) %></p>
+	</div>
+</div>

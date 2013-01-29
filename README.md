@@ -43,3 +43,7 @@ http://stackoverflow.com/questions/7170664/how-to-configure-heroku-application-d
 
 #Changing form field width
 http://www.binarywebpark.com/customizing-form-input-field-size-in-rails-using-twitter-bootstrap/
+
+#Nested Forms
+http://railscasts.com/episodes/196-nested-model-form-part-1
+http://railscasts.com/episodes/197-nested-model-form-part-2

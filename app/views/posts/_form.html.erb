@@ -13,22 +13,18 @@
   <% end %>
 
 
-    <%= form.label :subject %><br />
-  <div class="controls">
-    <%= form.text_field :subject, :class => "input-large" %>
-  </div>
+	<%= form.label :subject %>
+	<%= form.text_field :subject, :class => "input-large" %><br><br>
 
-    <%= form.label :description %><br />
-  <div class="controls">
-    <%= form.text_area :description, rows: 6, :class => "input-large" %>
-  </div>
-	<div class="field">
-		<%= form.label :photo %>
-		<%= form.file_field :photo %>
-	</div>
+	<%= form.label :description %>
+	<%= form.text_area :description, rows: 6, :class => "input-large" %><br><br>
+	
+	<%= form.label :photo %>
+	<%= form.file_field :photo %>
+	
 	<%= form.hidden_field :lounge_id, :value => @lounge.id %>  <!--track lounge-->
 
-	<br>
+	<br><br>
   <div class="actions">
     <%= form.submit "Submit Post"%>
   </div>
