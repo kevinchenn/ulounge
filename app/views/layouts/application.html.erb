@@ -2,11 +2,16 @@
 <html>
 <head>
   <title>ULounge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-dropdown.js"></script>
   <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
+	<!--<link href="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />-->
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= stylesheet_link_tag    "general", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <!--<%= javascript_include_tag "application" %>-->
+  <!--<%= csrf_meta_tags %>-->
+	
+
 </head>
 <body>	
 	<p id="notice"><%= notice %></p>
@@ -16,14 +21,14 @@
 		<%= yield %>
 	</div>
 	
+	
+	<script type="text/javascript">  
+  	$(document).ready(function () {  
+      $('.dropdown-toggle').dropdown();  
+    });  
+  </script>
+
 	<script type="text/javascript" src="http://webplayer.yahooapis.com/player.js"></script>
 	
-	<script type="text/javascript" src="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>   
-	<script type="text/javascript" src="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>
-	 <script type="text/javascript">  
-       $(document).ready(function () {  
-           $('.dropdown-toggle').dropdown();  
-       });  
-  </script> 
 </body>
 </html>

@@ -7,7 +7,8 @@
         <span class="icon-bar"></span>
       </a>
       <a class="brand" href="http://www.theulounge.com">ULounge</a>
-      <div class="nav-collapse collapse">
+			<div class="navbar">			
+      <!--<div class="nav-collapse collapse">-->
         <ul class="nav pull-right">
           <%= render 'devise/menu/login_items' %>
 					<%= render 'devise/menu/registration_items' %>
@@ -17,18 +18,32 @@
 					<li class="<%= 'active' if current_page?(about_path) %>"><%= link_to 'About', about_path %></li>
           <!--<li class="<%= 'active' if current_page?(bucketlist_path) %>"><%= link_to 'Bucketlist', bucketlist_path %></li>-->
 					<li class="<%= 'active' if current_page?(coachella_path) %>"><%= link_to 'Coachella', coachella_path %></li>
-					
-					<li class="dropdown">
-             <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown">
-               Genre
+					<li class="dropdown" id="accountmenu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="bucketlist">
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            	<li><a>Electronic</a></li>
+							<li><a>Hip Hop/Rap</a></li>
+							<li><a>Rock</a></li>
+							<li><a>Pop</a></li>
+							<li><a>Indie</a></li>
+            </ul>
+          </li>
+
+					<li class="<%= 'active' if current_page?(coachella_path) %>"><%= link_to 'Random', coachella_path %></li>
+					<li class="dropdown" id="accountmenu">
+             <a class="dropdown-toggle" data-toggle="dropdown" href="bucketlist">
                <b class="caret"></b>
              </a>
              <ul class="dropdown-menu">
-               <li><a href="#">PHP</a></li> 
+               <li><a>PHP</a></li>
+							 <li><a href="#">PHP</a></li>  
              </ul>
-           </li>					
+          </li>
         </ul>
-      </div><!--/.nav-collapse -->
+
+      </div><!--/.nav -->
     </div>
   </div>
 </div>
