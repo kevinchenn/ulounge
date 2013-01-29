@@ -17,10 +17,21 @@
 	
 	<%= form.label :day, 'Day Performing' %>
 	<%= form.text_field :day, :class => "input-large" %><br><br>
-	
-	<%= form.label :genre %>
-	<%= form.text_field :genre, :class => "input-large" %><br><br>
 
+	<%= form.label :genre, 'Genre (Check all that apply)' %>
+	<div class="genre-container">
+		<div class="check-box"><%= form.check_box :electronic %></div>
+		<div class="electronic"><%= form.label :electronic %></div>
+		<div class="check-box"><%= form.check_box :hiphop %></div>
+		<div class="hiphop"><%= form.label :hiphop, 'Hip Hop/Rap' %></div>
+		<div class="check-box"><%= form.check_box :rock %></div>
+		<div class="rock"><%= form.label :rock %></div>
+		<div class="check-box"><%= form.check_box :pop %></div>
+		<div class="pop"><%= form.label :pop %></div>
+		<div class="check-box"><%= form.check_box :indie %></div>
+		<div class="indie"><%= form.label :indie %></div>
+	</div>
+	<br><br>
 	<%= form.label :description %>
 	<%= form.text_area :description, rows: 6, :class => "input-large" %><br><br>
 	
@@ -31,9 +42,13 @@
 	<%= form.file_field :photo %><br><br>
 
 	<!--Tracks-->
+	<%= form.label :tracks %>
+	Please submit either links to youtube videos or web-hosted mp3s<br><br>
 	<%= form.fields_for :tracks do |t| %>
-		<%= render "track_fields", :t => t %>
+			<%= render "track_fields", :t => t %>
 	<% end %>
+	<!--:tracks-->
+	
 
 	
 	<%= form.hidden_field :lounge_id, :value => @lounge.id %>  <!--track lounge-->

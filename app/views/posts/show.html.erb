@@ -9,16 +9,32 @@
 				</div>
 			</div>
 			
-			
-				<b>Day Performing: </b><%= @post.day %>
-				<br><b>Genre: </b><%= @post.genre %>
+			<!--Artist Info-->
+			<br><br><br>
+			<div class="artist-info"><b>Day Performing: </b><%= @post.day %></div>
+			<div class="artist-info"><b>Genre(s): </b>
+				<% @count = 0 %>
+				<% for i in 0..5 %>
+		      <% if (@genres[i]) %>
+						<% @count +=1 %>
+		        <% if @count == @genre_count %>
+		           <%= @genre_names[i] %>
+		        <% else %>
+		          <%= @genre_names[i] %>, 
+		        <% end %>
+		      <% end %>
+		    <% end %>
+			</div>
+	
+			<!--Tracks-->
+			<div class="artist-info"><b>Selected Tracks</b>
 				<div class = "tracks">
 					<% if @lounge.name == 'Coachella' %>
 						<%= render @post.tracks%>
 					<% end %>
 				</div>
-				<b>Reviewer's Opinion: </b><%= @post.opinion %>
-			
+			</div>
+			<div class="artist-info"><b>Reviewer's Opinion: </b><%= @post.opinion %></div>
 		
 			<!--Comments-->
 		  <br><b>Comments:</b>

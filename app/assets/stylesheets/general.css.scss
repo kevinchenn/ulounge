@@ -28,7 +28,88 @@
 
 /* Coachella Post - Show */
 .tracks {
-	padding-top:50px;
+	padding-left:10px;
+	margin-top:3px;
+}
+.artist-info {
+	margin-top:5px;
+}
+/* Coachella Post - Form */
+.track {
+	width:550px;
+	.track-label {
+		width:100px;
+		float:left;
+	}
+	.track-url-label {
+		width:50px;
+		float:left;
+	}
+	.track-field {
+		width:200px;
+		float:left;
+	}
+}
+
+.genre-container {
+	width:500px;
+	padding-left:10px;
+	.check-box {
+		width:18px;
+		float:left;
+	}
+	.electronic {
+		width:80px;
+		float:left;
+		margin-top:3px;
+	}
+	.hiphop {
+		width:105px;
+		float:left;
+		margin-top:3px;
+	}
+	.rock {
+		width:55px;
+		float:left;
+		margin-top:3px;
+	}
+	.pop {
+		width:50px;
+		float:left;
+		margin-top:3px;
+	}
+	.indie {
+		width:60px;
+		float:left;
+		margin-top:3px;
+	}
+}
+.actions {
+	padding-top:20px;
+	clear:both;
+}
+/* Comment */
+.avatar {
+	width:50px;
+}
+.line-separator {
+	height:1px;
+	background:#EBEBEB;
+	border-bottom:0.8px solid #F0F0F0;
+	margin-top:-4px;
+	margin-bottom:1px;
+	width:400px;
+}
+.comment-author {
+	font-size:85%;
+	font-weight:bold;
+	color:#4682B4;
+}
+.comment-content {
+	.track-field {
+		width:200px;
+		float:left;
+	}
 }
 
 /* Comment */
@@ -41,6 +122,7 @@
 	border-bottom:0.8px solid #F0F0F0;
 	margin-top:-4px;
 	margin-bottom:1px;
+	width:400px;
 }
 .comment-author {
 	font-size:85%;

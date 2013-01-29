@@ -1,4 +1,6 @@
-<%= t.label :name, 'Track Name' %>
-<%= t.text_field :name, :class => "input-medium" %>
-<%= t.label :url, 'URL' %>
-<%= t.text_field :url, :class => "input-medium" %>
+<div class="track">
+	<div class="track-label"><%= t.label :name, 'Track Name' %></div>
+	<div class="track-field"><%= t.text_field :name, :class => "input-xlarge" %></div>
+	<div class="track-url-label"><%= t.label :url, 'URL' %></div>
+	<div class="track-field"><%= t.text_field :url, :class => "input-xlarge" %></div>
+</div>

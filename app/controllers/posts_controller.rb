@@ -24,6 +24,15 @@ class PostsController < ApplicationController
     @lounge = @post.lounge
     @user_id = @post.user_id 
     @comment = Comment.new
+    
+    @genres = [@post.electronic, @post.hiphop, @post.rock, @post.pop, @post.indie]
+    @genre_names = ["Electronic", "Hip Hop", "Rock", "Pop", "Indie"]
+    @genre_count = 0
+    @genres.each do |g|
+      if g
+        @genre_count +=1
+      end
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,18 +44,26 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-    @lounge = Lounge.find(params[:lounge_id])    
-    #@tracks = Array.new(10) { @post.tracks.build }
+    @lounge = Lounge.find(params[:lounge_id])
+    @counter = 0    
     
-    10.times do
+    8.times do
       track = @post.tracks.build
     end
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
     end
   end
+  
+#  def add_link
+#    #@post = Post.find(params[:id])
+#    track = @post.tracks.build
+#    respond_to do |format|
+#      format.js
+#    end
+#  end
 
   # GET /posts/1/edit
   def edit
@@ -62,18 +79,7 @@ class PostsController < ApplicationController
     @user = current_user
     @lounge = Lounge.find(params[:post][:lounge_id])
     @post = Post.new(params[:post])
-    #@post =  @lounge.posts.build(params[:post]) #Post.new(params[:post])
     @post.user_id = @user.id
-    
-    #new song link
-    #@tracks = Track.create(params[:tracks])
-    
-    #Parameter viewing
-    #@tracks = @post.tracks.build(params[:tracks_attributes])
-    
-    #params.each do |key,value|
-    #  Rails.logger.warn "Param #{key}: #{value}"
-    #end
     
     respond_to do |format|
       if @post.save

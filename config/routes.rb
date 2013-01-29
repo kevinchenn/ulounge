@@ -24,6 +24,7 @@ Ulounge::Application.routes.draw do
     collection do
       get 'like'
       get 'unlike'
+      get 'add_link'
     end
   end
   

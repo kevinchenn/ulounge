@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :likes
   attr_accessible :description, :lounge_id, :subject, :user_id, :photo, :created_at, :rating, :day, :genre, :opinion
-  attr_accessible :tracks_attributes
+  attr_accessible :tracks_attributes, :electronic, :hiphop, :rock, :pop, :indie
   validates :subject, :description, presence: true
   has_attached_file :photo, :styles => { :medium => "400x>", :thumb => "50x50>"}
   validates_attachment_presence :photo

@@ -47,3 +47,6 @@ http://www.binarywebpark.com/customizing-form-input-field-size-in-rails-using-tw
 #Nested Forms
 http://railscasts.com/episodes/196-nested-model-form-part-1
 http://railscasts.com/episodes/197-nested-model-form-part-2
+
+#Bootstrap Dropdown
+http://twitter.github.com/bootstrap/javascript.html#dropdowns

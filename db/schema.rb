@@ -82,8 +82,13 @@ ActiveRecord::Schema.define(:version => 20130128172255) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "day"
-    t.string   "genre"
     t.text     "opinion"
+    t.boolean  "electronic"
+    t.boolean  "hiphop"
+    t.boolean  "rock"
+    t.boolean  "pop"
+    t.boolean  "indie"
+    t.boolean  "fav"
   end
 
   create_table "ratings", :force => true do |t|
