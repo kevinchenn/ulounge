@@ -19,17 +19,17 @@
           <!--<li class="<%= 'active' if current_page?(bucketlist_path) %>"><%= link_to 'Bucketlist', bucketlist_path %></li>-->
 					<!--<li class="<%= 'active' if current_page?(coachella_path) %>"><%= link_to 'Coachella', coachella_path %></li>-->
 					<li class="dropdown" id="accountmenu">
-            <a class="dropdown-toggle" href="bucketlist">
+            <a class="dropdown-toggle" href="bucketlist" data-toggle="dropdown">
 							Coachella
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu" data-toggle="dropdown">
-							<li><a><%= link_to 'All', coachella_path %></a></li>
-            	<li><a><%= link_to 'Electronic', coachella_path %></a></li>
-							<li><a>Hip Hop/Rap</a></li>
-							<li><a>Indie</a></li>
-							<li><a>Pop</a></li>
-							<li><a>Rock</a></li>
+            <ul class="dropdown-menu">
+							<li class="genre-link"><a><%= link_to 'All', coachella_path %></a></li>
+            	<li class="genre-link"><a><%= link_to 'Electronic', coachella_path %></a></li>
+							<li class="genre-link"><a><%= link_to 'Hip Hop', coachella_path %></a></li>
+							<li class="genre-link"><a><%= link_to 'Indie', coachella_path %></a></li>
+							<li class="genre-link"><a><%= link_to 'Pop', coachella_path %></a></li>
+							<li class="last-genre-link"><a><%= link_to 'Rock', coachella_path %></a></li>
             </ul>
           </li>
         </ul>
