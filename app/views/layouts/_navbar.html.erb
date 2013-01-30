@@ -17,29 +17,20 @@
           <!--<li class="<%= 'active' if current_page?(lounge_list_path) %>"><%= link_to 'Lounges', lounge_list_path %></li>-->
 					<li class="<%= 'active' if current_page?(about_path) %>"><%= link_to 'About', about_path %></li>
           <!--<li class="<%= 'active' if current_page?(bucketlist_path) %>"><%= link_to 'Bucketlist', bucketlist_path %></li>-->
-					<li class="<%= 'active' if current_page?(coachella_path) %>"><%= link_to 'Coachella', coachella_path %></li>
+					<!--<li class="<%= 'active' if current_page?(coachella_path) %>"><%= link_to 'Coachella', coachella_path %></li>-->
 					<li class="dropdown" id="accountmenu">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="bucketlist">
+            <a class="dropdown-toggle" href="bucketlist">
+							Coachella
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-            	<li><a>Electronic</a></li>
+            <ul class="dropdown-menu" data-toggle="dropdown">
+							<li><a><%= link_to 'All', coachella_path %></a></li>
+            	<li><a><%= link_to 'Electronic', coachella_path %></a></li>
 							<li><a>Hip Hop/Rap</a></li>
-							<li><a>Rock</a></li>
-							<li><a>Pop</a></li>
 							<li><a>Indie</a></li>
+							<li><a>Pop</a></li>
+							<li><a>Rock</a></li>
             </ul>
-          </li>
-
-					<li class="<%= 'active' if current_page?(coachella_path) %>"><%= link_to 'Random', coachella_path %></li>
-					<li class="dropdown" id="accountmenu">
-             <a class="dropdown-toggle" data-toggle="dropdown" href="bucketlist">
-               <b class="caret"></b>
-             </a>
-             <ul class="dropdown-menu">
-               <li><a>PHP</a></li>
-							 <li><a href="#">PHP</a></li>  
-             </ul>
           </li>
         </ul>
 
