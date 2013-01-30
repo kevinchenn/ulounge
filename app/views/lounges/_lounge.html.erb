@@ -1,5 +1,19 @@
 <table>	
-	<% @posts = lounge.posts.sort_by(&:num_likes)%>
+	<!--<% @posts = lounge.posts.sort_by(&:num_likes)%>-->
+	<% if genre=='all'%>
+		<% @posts = lounge.posts.sort_by(&:num_likes)%>
+	<% elsif genre=='electronic' %>
+		<% @posts = lounge.posts.where(:electronic => true).sort_by(&:num_likes)%>
+	<% elsif genre=='hiphop' %>
+		<% @posts = lounge.posts.where(:hiphop => true).sort_by(&:num_likes)%>	
+	<% elsif genre=='indie' %>
+		<% @posts = lounge.posts.where(:indie => true).sort_by(&:num_likes)%>	
+	<% elsif genre=='pop' %>
+		<% @posts = lounge.posts.where(:pop => true).sort_by(&:num_likes)%>	
+	<% elsif genre=='rock' %>
+		<% @posts = lounge.posts.where(:rock => true).sort_by(&:num_likes)%>	
+	<% end %>
+	
 	<% @posts.each do |post| %>
 		<%= render post %>
 	<% end %>

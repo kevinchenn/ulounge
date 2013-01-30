@@ -24,12 +24,12 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-							<li class="genre-link"><a><%= link_to 'All', coachella_path %></a></li>
-            	<li class="genre-link"><a><%= link_to 'Electronic', coachella_path %></a></li>
-							<li class="genre-link"><a><%= link_to 'Hip Hop', coachella_path %></a></li>
-							<li class="genre-link"><a><%= link_to 'Indie', coachella_path %></a></li>
-							<li class="genre-link"><a><%= link_to 'Pop', coachella_path %></a></li>
-							<li class="last-genre-link"><a><%= link_to 'Rock', coachella_path %></a></li>
+							<li class="genre-link"><a><%= link_to 'All', coachella_path(:genre => 'all') %></a></li>
+            	<li class="genre-link"><a><%= link_to 'Electronic', coachella_path(:genre => 'electronic') %></a></li>
+							<li class="genre-link"><a><%= link_to 'Hip Hop', coachella_path(:genre => 'hiphop') %></a></li>
+							<li class="genre-link"><a><%= link_to 'Indie', coachella_path(:genre => 'indie') %></a></li>
+							<li class="genre-link"><a><%= link_to 'Pop', coachella_path(:genre => 'pop') %></a></li>
+							<li class="last-genre-link"><a><%= link_to 'Rock', coachella_path(:genre => 'rock') %></a></li>
             </ul>
           </li>
         </ul>

@@ -4,9 +4,9 @@
 			<h1><%= @lounge.name %></h1>
 			<br>
 				<div id="post-container">
-					<%= render @lounge %>
+					<%= render :partial => @lounge, :locals => {:genre => params[:genre]} %>
 				</div>
 		</div>
 	</div>
-	<%= render :partial => 'lounges/description_sidebar' %>
+	<%= render :partial => 'lounges/description_sidebar', :locals => {} %>
 </div>
