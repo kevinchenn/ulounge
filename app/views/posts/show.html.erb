@@ -1,41 +1,42 @@
+<div class="row-fluid row">
+	<div id="title-wrapper">
+		<div id="change-on-like"><%= render :partial => 'posts/like_count_and_heart', :locals => {:post => @post} %></div>
+		<div id="right-wrapper">
+			<span class="subject-heading"><%= @post.subject %></span>
+			<br> by <%= @post.author %>, <i>submitted <%= time_ago_in_words(@post.created_at) %> ago</i>
+		</div>
+	</div>
+</div>
+
 <div class="row-fluid row">	
-	<div class="span8 span-fixed-sidebar">
-		<div class="hero-unit">
-			<div id="title-wrapper">
-				<div id="change-on-like"><%= render :partial => 'posts/like_count_and_heart', :locals => {:post => @post} %></div>
-				<div id="right-wrapper">
-					<span class="subject-heading"><%= @post.subject %></span>
-					<br> by <%= @post.author %>, <i>submitted <%= time_ago_in_words(@post.created_at) %> ago</i>
-				</div>
-			</div>
-			
+	<div class="span7">
+		<div class="hero-unit">			
 			<!--Artist Info-->
-			<br><br><br>
-			<div class="artist-info"><b>Day Performing: </b><%= @post.day %></div>
-			<div class="artist-info"><b>Genre(s): </b>
-				<% @count = 0 %>
-				<% for i in 0..5 %>
-		      <% if (@genres[i]) %>
-						<% @count +=1 %>
-		        <% if @count == @genre_count %>
-		           <%= @genre_names[i] %>
-		        <% else %>
-		          <%= @genre_names[i] %>, 
-		        <% end %>
-		      <% end %>
-		    <% end %>
-			</div>
-	
-			<!--Tracks-->
-			<div class="artist-info"><b>Selected Tracks</b>
-				<div class = "tracks">
-					<% if @lounge.name == 'Coachella' %>
-						<%= render @post.tracks%>
-					<% end %>
+			<div class="content-wrapper">
+				<div class="artist-info"><b>Day Performing: </b><%= @post.day %></div>
+				<div class="artist-info"><b>Genre(s): </b>
+					<% @count = 0 %>
+					<% for i in 0..5 %>
+			      <% if (@genres[i]) %>
+							<% @count +=1 %>
+			        <% if @count == @genre_count %>
+			           <%= @genre_names[i] %>
+			        <% else %>
+			          <%= @genre_names[i] %>, 
+			        <% end %>
+			      <% end %>
+			    <% end %>
+				</div>				
+				<!--Tracks-->
+				<div class="artist-info"><b>Selected Tracks: </b>
+					<div class = "tracks">
+						<% if @lounge.name == 'Coachella' %>
+							<%= render @post.tracks%>
+						<% end %>
+					</div>
 				</div>
-			</div>
-			<div class="artist-info"><b>Reviewer's Opinion: </b><%= @post.opinion %></div>
-		
+				<div class="artist-info"><b>Reviewer's Opinion: </b><%= @post.opinion %></div>
+			</div>		
 			<!--Comments-->
 		  <br><b>Comments:</b>
 			<p>
@@ -46,13 +47,12 @@
 				<% end %>
 			</p>			
 			<!--Comment Table-->
-			<div id="comment-table"><%= render :partial => 'posts/comment_table', :locals => {:post => @post} %></div>
-			
+			<div id="comment-table"><%= render :partial => 'posts/comment_table', :locals => {:post => @post} %></div>	
 		</div>
 	</div>
 
-	<div class="span4">
-		<div class="well sidebar-nav-fixed-400">
+	<div class="span5">
+		<div class="well sidebar-nav" style="margin-top:10px">
 			<%= image_tag @post.photo.url(:medium) %>
 			<br><br>
 			<p>
@@ -63,11 +63,13 @@
 			<br>
 			<!--Edit link only shows up for the user that created the post-->
 			<% if current_admin || (!current_user.nil? && (current_user.id ==  @post.user_id)) %>
-				<%= link_to 'Edit Post', edit_post_path(@post) %> &nbsp;&nbsp;
-				<%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-				<br><br>
+				<%= link_to 'Edit', edit_post_path(@post) %> &nbsp; | &nbsp;
+				<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %> &nbsp; | &nbsp;
+				<%= link_to 'Back to Lounge', lounge_path(@post.lounge_id) %>
+			<% else %>
+				<%= link_to 'Back to Lounge', lounge_path(@post.lounge_id) %>
 			<% end %>
-			<%= link_to 'Back to Lounge', lounge_path(@post.lounge_id) %>
+			
 						
 		</div>
 	</div>
