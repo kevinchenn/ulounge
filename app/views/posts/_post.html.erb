@@ -7,9 +7,9 @@
 		<% else %>
 			<% @like = current_user.likes.find_by_post_id(post.id) %>
 			<% if @like.nil?%>
-				<div class="like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), {:controller => 'lounges', :action => 'like', :post_id => post.id, :user_id => current_user.id, :id => post.lounge_id}, {:remote => true } %></div>
+				<div class="like-image"><%= link_to image_tag("grey heart.png", mouseover: "red heart.png"), {:controller => 'lounges', :action => 'like', :post_id => post.id, :user_id => current_user.id, :id => post.lounge_id, :genre => genre}, {:remote => true } %></div>
 			<% else %>
-				<div class="like-image"><%= link_to image_tag("red heart.png", mouseover: "grey heart.png"), {:controller => 'lounges', :action => 'unlike', :post_id => post.id, :like_id => @like.id, :id => post.lounge_id }, {:remote => true} %></div>
+				<div class="like-image"><%= link_to image_tag("red heart.png", mouseover: "grey heart.png"), {:controller => 'lounges', :action => 'unlike', :post_id => post.id, :like_id => @like.id, :id => post.lounge_id, :genre => genre }, {:remote => true} %></div>
 			<% end %>
 		<% end %>
 	</td>
