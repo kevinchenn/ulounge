@@ -46,3 +46,5 @@ gem 'devise'
 gem 'thin'
 
 gem 'rails-rateit'
+
+ruby "1.9.2"
