@@ -73,10 +73,7 @@
 			  <%= @post.opinion %>
 			</p>
 			<b>Rate: </b>
-			<br>Current Rating: <div id="current-rating"><%= render :partial => 'posts/rating' %></div>
 			<br><%= render :partial => 'posts/rating_form', :locals => {:post_id => @post.id} %>
-			
-
 			<!--Edit link only shows up for the user that created the post-->
 		
 						
