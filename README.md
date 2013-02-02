@@ -50,3 +50,11 @@ http://railscasts.com/episodes/197-nested-model-form-part-2
 
 #Bootstrap Dropdown
 http://twitter.github.com/bootstrap/javascript.html#dropdowns
+
+#Yahoo Web Player
+http://webplayer.yahoo.com/docs/how-to-set-up/#how-to-change-theme
+mediaplayer.yahoo.com/api
+
+#Star Rating
+https://github.com/RichGuk/jquery-star-rating-rails
+http://eighty-b.tumblr.com/post/1569674815/creating-an-ajaxified-star-rating-system-in-rails-3

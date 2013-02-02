@@ -44,3 +44,5 @@ gem "paperclip", "~> 3.0"
 gem 'devise'
 
 gem 'thin'
+
+gem 'rails-rateit'

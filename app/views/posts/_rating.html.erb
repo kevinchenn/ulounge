@@ -1,0 +1,5 @@
+<% if @rating = current_user.ratings.find_by_post_id(params[:id]) %>
+  <%= @rating.value %>
+<% elsif @rating = current_user.ratings.find_by_post_id(post_id) %>
+  <%= @rating.value %>
+<% end %>

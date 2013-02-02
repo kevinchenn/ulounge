@@ -1,13 +1,64 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+*= require rateit
+*= require bootstrap
+*/
+/*
+*= require rateit
+.comment-author {
+	font-size:85%;
+	font-weight:bold;
+	color:#4682B4;
+}
+.line-separator {
+	height:1px;
+	background:#EBEBEB;
+	border-bottom:0.8px solid #F0F0F0;
+	margin-top:0px;
+	margin-bottom:5px;
+}
+.avatar {
+	width:50px;
+}
+*/
+
+table {
+	td {
+		padding:5px;
+	}
+}
+
+.like-image {
+	width:25px;
+}
+.like-count {
+	font-weight:bold;
+	font-size:170%;
+	color:#957070;
+}
+
+td {
+	.post-image {
+		width:70px;
+	}
+	.post-subject {
+		font-size:130%;
+		margin-bottom:-3px;
+	}
+	.post-author {
+		font-size:90%;
+	}
+	.post-comments {
+		font-size:90%;
+		color:#4682B4;
+		font-weight:bold;
+		margin-top:-2px;
+	}
+}
+.post-author {
+	margin-top:4px;
+}
+
+.subject-heading {
+	font-size:150%;
+	font-weight:bold;
+}

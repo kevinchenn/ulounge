@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     @lounge = @post.lounge
     @user_id = @post.user_id 
     @comment = Comment.new
+    @rating = Rating.new
     
     @genres = [@post.electronic, @post.hiphop, @post.rock, @post.pop, @post.indie]
     @genre_names = ["Electronic", "Hip Hop", "Rock", "Pop", "Indie"]
@@ -33,6 +34,7 @@ class PostsController < ApplicationController
         @genre_count +=1
       end
     end
+    
 
     respond_to do |format|
       format.html # show.html.erb

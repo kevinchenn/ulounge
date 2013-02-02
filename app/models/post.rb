@@ -14,9 +14,9 @@ class Post < ActiveRecord::Base
   # Coachella Lounge only
   has_many :tracks, :dependent => :destroy
   accepts_nested_attributes_for :tracks, :allow_destroy => true
-  #
+  #Rating
   has_many :ratings
-    
+  has_many :raters, :through => :ratings, :source => :users    
   def num_likes
     - self.likes.count  #negative, so order will be descending
   end
@@ -27,6 +27,15 @@ class Post < ActiveRecord::Base
   
   def num_comments
     self.comments.count
+  end
+  
+  def average_rating
+    @value = 0
+    self.ratings.each do |rating|
+      @value = @value + rating.value
+    end
+    @total = self.ratings.size
+    @value.to_f / @total.to_f
   end
 
 end

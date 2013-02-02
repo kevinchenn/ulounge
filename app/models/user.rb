@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
   
   #Coachella Lounge
   has_many :ratings
+  has_many :rated_posts, :through => :ratings, :source => :posts
+  
+  #Rating
   
   def has_like? product
     likes.find_by_product_id product.id

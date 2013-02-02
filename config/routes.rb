@@ -17,8 +17,8 @@ Ulounge::Application.routes.draw do
   end
 
   resources :comments
-  
   resources :likes
+  resources :ratings
   
   resources :posts do
     collection do
@@ -27,8 +27,7 @@ Ulounge::Application.routes.draw do
       get 'add_link'
     end
   end
-  
-  
+    
   match 'bucketlist' => 'lounges#show', :defaults => { :id => 1 }, :as => 'bucketlist'
   match 'coachella' => 'lounges#show', :defaults => { :id => 2 }, :as => 'coachella'
   
