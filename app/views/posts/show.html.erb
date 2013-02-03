@@ -25,7 +25,6 @@
 		<div class="hero-unit">			
 			<!--Artist Info-->
 			<div class="content-wrapper">
-				<div class="artist-info"><b>Rating: </b><div id="avg-rating"><%= @post.average_rating %></div></div> <!--average rating -->
 				<div class="artist-info"><b>Day Performing: </b><%= @post.day %></div>
 				<div class="artist-info"><b>Genre(s): </b>
 					<% @count = 0 %>
@@ -68,14 +67,21 @@
 		<div class="well sidebar-nav" style="margin-top:10px">
 			<%= image_tag @post.photo.url(:medium) %>
 			<br><br>
-			<p>
+			<div class="rating"> <!--average rating -->
+				<div class="rating-title"><b>Muser Rating: </b></div>
+				<div id="avg-rating"><%= '%.1f' % @post.average_rating %></div>
+			</div>
+			<div id="rating-form">
+				<%= render :partial => 'posts/rating_form', :locals => {:post_id => @post.id} %>
+			</div>
+			<!--Edit link only shows up for the user that created the post-->
+			<br>
+			<div id="opinion">
 			  <b>Reviewer's Opinion:</b>
 			  <%= @post.opinion %>
-			</p>
-			<b>Rate: </b>
-			<br><%= render :partial => 'posts/rating_form', :locals => {:post_id => @post.id} %>
-			<!--Edit link only shows up for the user that created the post-->
-		
+			</div>
+			
+		<br>
 						
 		</div>
 	</div>

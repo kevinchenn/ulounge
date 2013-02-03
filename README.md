@@ -58,3 +58,6 @@ mediaplayer.yahoo.com/api
 #Star Rating
 https://github.com/RichGuk/jquery-star-rating-rails
 http://eighty-b.tumblr.com/post/1569674815/creating-an-ajaxified-star-rating-system-in-rails-3
+
+#Make Heroku Faster
+http://www.stormconsultancy.co.uk/blog/development/6-ways-to-get-more-bang-for-your-heroku-buck-while-making-your-rails-site-super-snappy/

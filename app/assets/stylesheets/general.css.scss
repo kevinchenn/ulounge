@@ -93,7 +93,31 @@
 	margin-top:3px;
 }
 
+.rating {
+	width:220px;
+	.rating-title{
+		float:left;
+		width:100px;
+	}
+	#avg-rating {
+		float:left;
+		width:120px;
+		font-weight:bold;
+		font-size:120%;
+		padding-bottom:5px;
+	}
+	.rating-value {
+		float:left;
+		width:120px;
+	}
+}
 
+#rating-form {
+	margin-top:20px;
+}
+#opinion {
+	clear:both;
+}
 /* Coachella Post - Form */
 .track {
 	width:550px;
