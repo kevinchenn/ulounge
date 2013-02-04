@@ -47,4 +47,4 @@ gem 'devise'
 
 gem 'thin'
 
-gem 'rails-rateit'
+gem 'asset_sync'

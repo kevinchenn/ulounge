@@ -4,10 +4,16 @@ blue arrow.png: blue arrow-224fd1c06ce804f4237c768b25ddd838.png
 bucket.jpg: bucket-3b79790fdde5b9b8416c223a747e5459.jpg
 bucket.png: bucket-18c04550fe4bbf9bf6710f4ac09f579f.png
 default-avatar.jpg: default-avatar-2dc912b76f8a018f9dee32b1da0d29be.jpg
-grey heart.png: grey heart-086b8af66dec65c3432c4c3db18c3e2f.png
+glow-heart.png: glow-heart-beafe1b451601e66f03d29d1f73976de.png
+glow-rating.png: glow-rating-9f3c78011ac43d2d31c891e623f84440.png
+grey-heart.png: grey-heart-086b8af66dec65c3432c4c3db18c3e2f.png
+grey-rating.png: grey-rating-b4f57e0cef018f98c188f552b39508de.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 red arrow.png: red arrow-ca4fdab5b71d1f3bf7507779452ca1e9.png
-red heart.png: red heart-4b6e6c37e41397c4c6f0c1453cfb197a.png
+red heart.psd: red heart-3a976603f15c2b47eb31a3fc70cdbd96.psd
+red-heart.png: red-heart-4b6e6c37e41397c4c6f0c1453cfb197a.png
+red-rating.png: red-rating-87f6dddb7fd948f745d64e5ebf50f9c3.png
 thumbs-up.jpg: thumbs-up-2d14f45bcbea42d3ec0a8d2cb6281c91.jpg
-application.js: application-cd76db6472e5961a0bd23eac6612d43a.js
-application.css: application-8be022c2423a9bf2e865d0df7efdf3ae.css
+application.js: application-197dda292a76d62d95eceab9b5a72d18.js
+application.css: application-0d2d2dd0a6977a8485da1ac882f09c77.css
+bootstrap.css: bootstrap-1873994b23371683cb185abe2e7d68ce.css
