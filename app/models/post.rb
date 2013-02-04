@@ -6,7 +6,9 @@ class Post < ActiveRecord::Base
   attr_accessible :description, :lounge_id, :subject, :user_id, :photo, :created_at, :rating, :day, :genre, :opinion
   attr_accessible :tracks_attributes, :electronic, :hiphop, :rock, :pop, :indie
   validates :subject, :description, presence: true
-  has_attached_file :photo, :styles => { :medium => "400x>", :thumb => "50x50>"}
+  #paperclip
+  has_attached_file :photo, :styles => { :medium => "400x>", :thumb => "50x50>"}, :storage => :s3, 
+  :s3_credentials => "#{Rails.root}/config/s3.yml", :path => "/:style/:id/:filename"
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']

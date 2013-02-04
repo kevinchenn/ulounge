@@ -63,3 +63,7 @@ http://eighty-b.tumblr.com/post/1569674815/creating-an-ajaxified-star-rating-sys
 http://www.stormconsultancy.co.uk/blog/development/6-ways-to-get-more-bang-for-your-heroku-buck-while-making-your-rails-site-super-snappy/
 
 http://blog.firmhouse.com/complete-guide-to-serving-your-rails-assets-over-s3-with-asset_sync
+
+#Carrierwave - Image uploading
+
+##Carrierwave Direct - Uploads images directly to S3

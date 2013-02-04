@@ -1,0 +1,8 @@
+development:
+  bucket: tunemuse-dev
+  access_key_id: AKIAIWK6MOJCIQAKJH5A
+  secret_access_key: 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
+production:
+  bucket: tunemuse
+  access_key_id: AKIAIWK6MOJCIQAKJH5A
+  secret_access_key: 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

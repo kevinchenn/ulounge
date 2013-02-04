@@ -48,3 +48,6 @@ gem 'devise'
 gem 'thin'
 
 gem 'asset_sync'
+
+gem 'aws-s3'
+gem 'aws-sdk'
