@@ -1,0 +1,269 @@
+/* Dropdown */
+.genre-link {
+	margin-bottom:-6px;
+	margin-top:-3px;
+}
+.last-genre-link {
+	margin-bottom:2px;
+	margin-top:-3px;
+}
+
+/* Artist Title */
+#title-wrapper {
+	width:100%;
+	height:45px;
+	padding-bottom:10px;
+	padding-top:15px;
+	margin-top:-30px;
+	padding-left:50px;
+	background-color:#5E5E5E;
+	color:white;
+}
+#left-wrapper {
+	width:70%;
+	float:left;
+}
+#right-wrapper {
+	width:30%;
+	text-align:right;
+	padding-top:20px;
+	float:left;
+	a {
+		color:white;
+	}
+}
+#like-count-large {
+	font-weight:bold;
+	font-size:240%;
+	color:white; /*#957070;*/
+	vertical-align:middle;
+	margin-top:5px;
+	width:28px;
+	float:left;
+}
+#like-image-large {
+	padding-right:12px;
+	width:35px;
+	float:left;
+}
+#artist-title {
+	width:325px;
+	float:left;
+}
+.like-view {
+	display:inline-block; 
+	padding-right:10px;
+}
+
+/* Artist Content */
+.hero-unit {
+  padding-left: 50px;
+  margin-bottom: 30px;
+	margin-right: 50px;
+  /*font-size: 18px; */
+  /*font-weight: 200;*/
+  /*line-height: 30px;*/
+  color: inherit;
+  /*background-color: #eeeeee; */
+  /*-webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;*/
+}
+.hero-unit h1 {
+  margin-bottom: 0;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit;
+}
+.hero-unit li {
+  line-height: 30px;
+}
+
+/* Coachella Post - Show */
+.content-wrapper {
+	clear:both;
+	padding-top:15px;
+}
+.artist-info {
+	margin-top:5px;
+}
+.tracks {
+	padding-left:10px;
+	margin-top:3px;
+}
+
+.rating {
+	width:220px;
+	.rating-title{
+		float:left;
+		width:100px;
+	}
+	#avg-rating {
+		float:left;
+		width:120px;
+		font-weight:bold;
+		font-size:120%;
+		padding-bottom:5px;
+	}
+	.rating-value {
+		float:left;
+		width:120px;
+	}
+}
+
+#rating-form {
+	margin-top:20px;
+}
+#opinion {
+	clear:both;
+}
+/* Coachella Post - Form */
+.track {
+	width:550px;
+	.track-label {
+		width:100px;
+		float:left;
+	}
+	.track-url-label {
+		width:50px;
+		float:left;
+	}
+	.track-field {
+		width:200px;
+		float:left;
+	}
+}
+
+.genre-container {
+	width:500px;
+	padding-left:10px;
+	.check-box {
+		width:18px;
+		float:left;
+	}
+	.electronic {
+		width:80px;
+		float:left;
+		margin-top:3px;
+	}
+	.hiphop {
+		width:105px;
+		float:left;
+		margin-top:3px;
+	}
+	.rock {
+		width:55px;
+		float:left;
+		margin-top:3px;
+	}
+	.pop {
+		width:50px;
+		float:left;
+		margin-top:3px;
+	}
+	.indie {
+		width:60px;
+		float:left;
+		margin-top:3px;
+	}
+}
+.actions {
+	padding-top:20px;
+	clear:both;
+}
+.actions-2 {
+	padding-top:5px;
+	clear:both;
+}
+/* Comment */
+.avatar {
+	width:50px;
+}
+.line-separator {
+	height:1px;
+	background:#EBEBEB;
+	border-bottom:0.8px solid #F0F0F0;
+	margin-top:-4px;
+	margin-bottom:1px;
+	width:400px;
+}
+.comment-author {
+	font-size:85%;
+	font-weight:bold;
+	color:#4682B4;
+}
+.comment-content {
+	.track-field {
+		width:200px;
+		float:left;
+	}
+}
+
+/* Comment */
+.input-poop {
+	width:100%;
+  /*width: 400px;*/
+}
+.avatar {
+	width:50px;
+}
+.line-separator {
+	height:1px;
+	background:#EBEBEB;
+	border-bottom:0.8px solid #F0F0F0;
+	margin-top:-4px;
+	margin-bottom:1px;
+	width:400px;
+}
+.comment-author {
+	font-size:85%;
+	font-weight:bold;
+	color:#4682B4;
+}
+.comment-content {
+	font-size:95%;
+	margin-top:-2px;
+	margin-bottom:-3px;
+}
+.comment-like-image {
+	width:15px;
+	float:left;
+}
+.comment-like-count {
+	font-size:105%;
+	font-weight:bold;
+	color:#957070;
+	width:12px;
+	float:left;
+}
+.comment-delete {
+	margin-left:5px;
+	font-size:85%;
+	font-weight:bold;
+}
+.comment-wrapper {
+	width:27px;
+}
+
+/* Rating */
+form.rating_ballot {
+	input#rating_submit {
+		display:none;
+	}
+	input.rating_button{
+		display:none;
+	}
+	label.rating {
+		cursor:pointer;
+		display:block;
+		height:20px;
+		width:22px;
+		float:left;
+		span { display:none; }
+		background-image: url('grey-rating.png');
+	}
+	label.rating.bright { background-image: url('red-rating.png'); }
+	label.rating.glow { background-image: url('glow-rating.png'); }
+	
+}
