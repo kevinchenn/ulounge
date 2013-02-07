@@ -65,5 +65,8 @@ http://www.stormconsultancy.co.uk/blog/development/6-ways-to-get-more-bang-for-y
 http://blog.firmhouse.com/complete-guide-to-serving-your-rails-assets-over-s3-with-asset_sync
 
 #Carrierwave - Image uploading
-
+https://github.com/jnicklas/carrierwave
+https://github.com/jnicklas/carrierwave/wiki/How-to%3A-Make-Carrierwave-work-on-Heroku
 ##Carrierwave Direct - Uploads images directly to S3
+https://github.com/dwilkie/carrierwave_direct
+https://github.com/dwilkie/carrierwave_direct_example

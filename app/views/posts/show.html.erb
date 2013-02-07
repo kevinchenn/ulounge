@@ -68,7 +68,7 @@
 			<%= image_tag @post.photo.url(:medium) %>
 			<br><br>
 			<div class="rating"> <!--average rating -->
-				<div class="rating-title"><b>Muser Rating: </b></div>
+				<div class="rating-title"><b>Geek Rating: </b></div>
 				<div id="avg-rating"><%= '%.1f' % @post.average_rating %></div>
 			</div>
 			<div id="rating-form">
@@ -80,8 +80,6 @@
 			  <b>Reviewer's Opinion:</b>
 			  <%= @post.opinion %>
 			</div>
-			
-		<br>
 						
 		</div>
 	</div>

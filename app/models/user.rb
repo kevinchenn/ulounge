@@ -13,8 +13,9 @@ class User < ActiveRecord::Base
   has_many :comment_likes
   validates :email, :password, :password_confirmation, :name, :username, presence: true
   
-  has_attached_file :avatar, :styles => { :medium => "400x>", :thumb => "70x>"}
-  #validates_attachment_presence :avatar
+  has_attached_file :avatar, :styles => { :medium => "400x>", :thumb => "70x>"}, :storage => :s3, 
+  :s3_credentials => "#{Rails.root}/config/s3.yml", :path => "/:style/:id/:filename"
+  validates_attachment_presence :avatar
   validates_attachment_size :avatar, :less_than => 5.megabytes
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
   
